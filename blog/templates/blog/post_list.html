@@ -5,13 +5,16 @@
         <div class="date">
             {{ post.published_date }}
         </div>
-        
+         <h2 class="title-header">{{ post.title }}</h2>
         <div class="image-container">
             <img src= "{{ post.coverImage.url }}">
         </div>
-        <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+       
 
-        <p>{{ post.text|linebreaksbr }}</p>
+        <p class="post_list-gradient">{{ post.text|truncatewords:60 }}</p>
+        {% if post.text|length > 60 %}
+            <a style="float:right" href="{% url 'post_detail' pk=post.pk %}">Read More</a>
+        {% endif %}
     </div>
     {% endfor %}
 {% endblock %}
