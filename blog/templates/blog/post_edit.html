@@ -1,9 +1,25 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <h2>New post</h2>
-    <form method="POST" class="post-form" enctype="multipart/form-data">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
-    </form>
+    <div  class="post-detail">
+	    <form method="POST" class="post-form" enctype="multipart/form-data">{% csrf_token %}
+	        {{ form.title }} 
+	    	
+	    	<div class=fileinput-container>
+	    			<img id = "coverImage" src="{{ post.coverImage.url }}" alt='' class=''> 
+	    			<div id="hidden_items">
+	    				{{ form.coverImage }}
+	    			</div>
+	    			
+	    			<label for='id_coverImage' class="image-upload">Choose file</label>
+
+	    	</div>  	
+	    	 
+	    	{{ form.text }}
+
+	        
+	        <button type="submit" class="save btn btn-default">Save</button>
+	    </form>
+	</div>
+   
 {% endblock %}
