@@ -5,7 +5,7 @@
         <div  class="post">
             <h2 class="title-header">{{ post.title }}</h2>
             <div class="image-container">
-                <img src= "{{ post.coverImage.url }}">
+                <img style="height:300px" src= "{{ post.coverImage.url }}">
             </div>
 
             <p class="post_list-gradient">{{ post.text|truncatewords:60 }}</p>
