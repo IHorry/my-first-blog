@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+            <div>
+
+                <form method="POST" class="post-form" enctype="multipart/form-data">{% csrf_token %}
+
+                	{{ qual_form.qualification }}
+                	{{ qual_form.subject }}
+                	{{ qual_form.grade }}
+
+                <button type="submit" class="save btn btn-default">Save</button>
+
+	             
+	       </div>
+   
+{% endblock %}

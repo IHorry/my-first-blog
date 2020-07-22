@@ -1,0 +1,175 @@
+h4 {
+	align-content: center;
+	padding-top:5px;
+	margin-left: 5px;
+}
+
+#summary-div1 {
+
+}
+
+#summary-div2 {
+	display: none
+}
+
+#CV_placeholder {
+	align-self: center;
+
+}
+
+.CV_container {
+
+
+}
+
+.summary-div {
+	border: 1px solid #808B96;
+	border-radius: 5px;
+	margin-bottom: 2px;
+	box-shadow: 0 1px 3px #777;
+	padding-left: 8px;
+	font-size: 8pt;
+	animation: slideInFromTop 1s
+}
+
+
+.skills-div{
+	border: 1px solid #808B96;
+	padding-right: 5px;
+
+	width: 75%;
+	border-radius: 5px;
+	margin-right: 2px;
+	box-shadow: 0 1px 3px #777;
+	font-size: 8pt;
+	animation: slideInFromLeft 1s
+}
+
+
+.qualifications-div{
+	border: 1px solid #808B96;
+	border-radius: 5px;
+	box-shadow: 0 1px 3px #777;
+	font-size: 8pt;
+	animation: slideInFromRight 1.2s;
+	padding-bottom:5px;
+
+
+}
+
+.workExp-div{
+	border: 1px solid #808B96;
+	border-radius: 5px;
+	box-shadow: 0 1px 3px #777;
+	font-size: 8pt;
+	animation: slideInFromRight 1.75s;
+	padding-bottom: 5px;	
+}
+
+.interests-div{
+	border: 1px solid #808B96;
+	padding-right: 5px;
+	border-radius: 5px;
+	margin-bottom: 2px;
+	box-shadow: 0 1px 3px #777;
+	font-size: 8pt;
+	animation: slideInFromBottom 1s
+}
+
+.references-div{
+	border: 1px solid #808B96;
+	padding-right: 5px;
+	border-radius: 5px;
+	box-shadow: 0 1px 3px #777;
+	font-size: 8pt;
+	animation: slideInFromBottom 1.3s
+}
+
+
+.horizontal-flex {
+
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 2px;
+}
+
+.inner-vert-flex {
+	width:  100%;
+	display:flex;
+	flex-direction: column;
+
+
+}
+
+.cv-detail {
+	display: inline-block;
+	text-align: left;
+	border-right: 1px;
+	border-left: 1px;
+	width:50%;
+	margin-left: 120px;
+	background-color:  rgb(250,250,250);
+	background-image: linear-gradient(to bottom,rgba(255,255,255,0), rgba(245,245,245,1));
+
+}
+
+
+.list1 {
+	margin-left: 5px;
+}
+
+
+.addform {
+	align-content: center;
+}
+
+
+
+
+
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(300%);
+  }
+
+  100% {  
+    transform: translateY(0);
+
+  }
+}
+
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-300%);
+  }
+
+  100% {  
+    transform: translateY(0);
+
+  }
+}
+
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-300%);
+  }
+
+  100% {  
+    transform: translateX(0);
+
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(300%);
+  }
+
+  100% {  
+    transform: translateX(0);
+
+  }
+}

@@ -1,5 +1,118 @@
 {% extends 'blog/base.html' %}
 {% block content %}
+
+    <div class="CV_container" style="align-content: center;">
+       {% if CV %}
+            <div id="summary-div1">
+                <p>{{ CV.summary }}</p>
+            </div>
+            
+       {% else %}
+            {% if user.is_authenticated %}
+                <a href="{% url 'CV_new' %}" id="CV_placeholder"> Add New CV </a>
+            {% else %}
+                No CV to show :(
+            {% endif %}
+       {% endif %}
+
+       <button id = "CV_viewfull"  >View full CV</button>
+
+
+       <div id="CV_full" class="fade-out"> 
+
+
+            <div > 
+                {% if user.is_authenticated %}
+                    
+                    
+                     <form action= "" method="POST">{% csrf_token %}
+                        <a class="btn btn-default" href="{% url 'CV_edit' %}" id = "edit_post" ><span class="glyphicon glyphicon-pencil"></span></a>
+                        <button id = "delete_post" onclick="confirm('Are you want your CV?')" class="btn btn-default" type="submit" type=><span class="glyphicon glyphicon-trash"></span></button>
+                    </form>
+                {% endif %}
+            </div>
+
+            <div  class="cv-detail">
+                
+                <div class="summary-div">
+                    <h4>Summary</h4>
+                    <p>{{ CV.summary }}</p>
+                </div>
+                <div class="horizontal-flex">
+                     <div class="skills-div">
+                        <h4>Skills and Experience</h4>
+                        {% for skill in skills %}
+                        <div class="skill-container">
+                            <ul>
+                                <li><b>{{ skill.skill }}</b><br /><span>{{ skill.description }}</span></li>
+                            </ul>
+
+                        </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                    <div class="inner-vert-flex">
+                        <div class="qualifications-div">
+                            <h4>Qualifications and Education</h4>
+                            {% for qual in qualifications %}
+                                <div class="qual-container">
+                                    <ul>
+                                        <li>{{ qual.qualification }}<br /><span>{{ qual.subject }}
+                                            <br /> <span>{{ qual.grade }}</span></span></li>
+                                    </ul>
+
+                                </div>
+
+                            {% endfor %}
+
+                        </div>
+
+
+                        <div class="workExp-div">
+                            <h4>Previous Work Experience</h4>
+                            {% for work in workExp %}
+                                <div class="workExp-container">
+                                    <ul>
+
+                                        <li >{{ work.dateStarted }} - {{ work.dateEnd }}<br /><span>{{ work.title }}
+                                            <br /> <span>{{ work.company }}</span></span></li>
+                                    </ul>
+
+                                </div>
+
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                </div>
+                   
+                <div class="interests-div">
+                    <h4>Other Interests</h4>
+                    <p class="list1">{{CV.interests}}l</p>
+                </div>
+
+                <div class="references-div">
+                    <h4>References</h4>
+                     <p class="list1">{{CV.references }} </p>
+                </div>
+                
+               
+         
+            </div>
+        </div>
+    </div>
+       
+  
+    <div id="blog_div" class="slide-in">
+             <div class="blog-header">
+            {% if user.is_authenticated %}
+                    <a href="{% url 'post_new' %}" class="top-menu"><span id= "plusicon-colourchange"class="glyphicon glyphicon-plus"></span></a>
+            {% endif %}
+            <h1 style="text-align: center;"> <a  > My Blog</a></h1>
+            <span id="titlebreak"></span>
+    </div>
     <div class="flex-container"> 
         {% for post in posts %}
         <div  class="post">
@@ -15,5 +128,8 @@
         </div>
     {% endfor %}
     </div>
+
+    </div>
+
 
 {% endblock %}

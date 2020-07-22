@@ -1,15 +1,10 @@
 
 h1 a, h2 a {
-    color: #808B96 ;
     font-family: 'Lobster';
 }
 
 body {
     padding-left: 15px;
-}
-
-#title {
-	color: #808B96; 
 }
 
 #id_title {
@@ -18,7 +13,7 @@ body {
 	font-size: 30px;
 }
 
-#id_text {
+.textarea {
 	border-style: none;
 	width: 100%;
 	resize: none;
@@ -114,15 +109,133 @@ body {
 
 }
 
+#CV_viewfull {
+  float:right; 
+  padding-right: 2px; 
+  color: #808B96; 
+  border: none;
+}
+
+#CV_viewfull:click {
+  border: none;
+}
+
+#CV_hidden {
+	display: none;
+}
+
+
+
+.fade-in {
+
+	animation: fadeIn 2s ;
+
+}
+
+.fade-out {
+
+	animation: fadeOut 2s ;
+	display: none
+	
+
+}
+
+
+.slide-out {
+
+	animation: slideOutToBottom 1s;
+	display: none;
+
+
+}
+
+.slide-in {
+
+	animation: slideInToBottom 1s 
+
+}
+
+#summary-div1 {
+  animation: fadeIn 2s ;
+}
+
+@keyframes slideOutToBottom {
+  0% {
+    transform: translateY(0);
+  }
+
+  75% {
+  	transform: translateY(500%);
+  }
+
+  100% {
+  	display: none;
+  }
+
+}
+
+
+@keyframes slideInToBottom {
+  0% {
+    transform: translateY(300%);
+  }
+
+  100% {  
+    transform: translateY(0);
+
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1
+  }
+
+  100% {  
+    opacity: 0;
+ 
+
+  }
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0
+  }
+
+  100% {  
+    opacity: 1
+
+  }
+}
+
+
 
 .page-header {
-    background-color: rgb(250,250,250);
+
+	border-radius: 4px;
+    background-color: #808B96;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-    color: #ffffff;
+    color: rgb(215,215,215);
+    font-size: 36pt;
+    text-decoration: none;
+}
+
+
+
+.blog-header {
+    background-color: rgb(250,250,250);
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+
+.blog-header h1, .blog-header h1 a, .blog-header h1 a:visited, .blog-header h1 a:active {
+    color: #808B96;
     font-size: 36pt;
     text-decoration: none;
 }
@@ -194,8 +307,6 @@ body {
     margin-left: 25px;
     margin-right: 25px;
 }
-
-
 
 .post-detail {
 	display: inline-block;
